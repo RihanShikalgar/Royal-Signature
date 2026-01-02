@@ -33,7 +33,7 @@
       <h2>We Value Your Feedback</h2>
       <p>Let us know about your experience with Royal Signature perfumes.</p>
   
-      <form action="#" method="POST">
+      <form action="#" method="POST" id="feedbackForm">
         <!-- Name -->
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -48,8 +48,8 @@
   
         <!-- Feedback Type -->
         <div class="form-group">
-          <label for="feedback-type">Feedback Type</label>
-          <select id="feedback-type" name="feedback-type">
+          <label for="feedback_type">Feedback Type</label>
+          <select id="feedback_type" name="feedback_type">
             <option class="fcolor" value="product">Product Quality</option>
             <option class="fcolor" value="website">Website Experience</option>
             <option class="fcolor" value="service">Customer Service</option>
@@ -156,9 +156,35 @@
     </div>
   </footer>
 
+  <script src="js/utils.js"></script>
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
+
+    // Handle feedback form submission
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        let formData = new FormData(this);
+
+        fetch('backend/submit_feedback.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Thank you for your feedback!');
+                document.getElementById('feedbackForm').reset();
+            } else {
+                alert(data.message || 'Failed to submit feedback');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while submitting your feedback');
+        });
+    });
   </script>
 
 <script>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Signature - Getting Started</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin-top: 30px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: bold;
+        }
+        .step {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .step h3 {
+            display: inline-block;
+            margin: 0;
+            color: #333;
+        }
+        .code-block {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .btn-action {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-action:hover {
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .success-box {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .error-box {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .feature-list li:before {
+            content: "✅ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌟 Royal Signature - Getting Started Guide</h1>
+
+    <div class="warning-box">
+        <strong>⚠️ Important:</strong> Your XAMPP Apache installation appears to be incomplete. We've provided an alternative solution using PHP's built-in server, which works perfectly!
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step">
+        <span class="step-number">1</span>
+        <h3>Start MySQL Database</h3>
+        <p style="margin-top: 15px;">Open Command Prompt and run:</p>
+        <div class="code-block">cd C:\xampp\mysql\bin
+mysqld</div>
+        <p style="color: #666; font-size: 14px;">Or visit: <code>C:\xampp\mysql\bin\mysqld.exe</code></p>
+        <p style="margin-top: 10px;">✓ Leave this window open while using the website</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+        <span class="step-number">2</span>
+        <h3>Start PHP Development Server</h3>
+        <p style="margin-top: 15px;"><strong>Option A (EASIEST):</strong></p>
+        <p>Double-click this file from the Royal-Signature folder:</p>
+        <div class="code-block">RUN_PHP_SERVER.bat</div>
+
+        <p style="margin-top: 15px;"><strong>Option B (Manual):</strong> Open Command Prompt and run:</p>
+        <div class="code-block">cd C:\xampp\htdocs\Royal-Signature
+C:\xampp\php\php.exe -S localhost:8888</div>
+        
+        <p style="margin-top: 10px;">✓ You should see: <code>Listening on http://localhost:8888</code></p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+        <span class="step-number">3</span>
+        <h3>Open Website in Browser</h3>
+        <p style="margin-top: 15px;">Visit this URL in your browser:</p>
+        <div class="code-block">http://localhost:8888</div>
+        <p style="margin-top: 10px;">You should see the login page!</p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+        <span class="step-number">4</span>
+        <h3>Login with Test Account</h3>
+        <p style="margin-top: 15px;"><strong>Username:</strong> <code>testuser</code></p>
+        <p><strong>Password:</strong> <code>password123</code></p>
+        <p style="margin-top: 10px;">✓ You're now logged in and can explore the website!</p>
+    </div>
+
+    <!-- Features -->
+    <div class="card">
+        <div class="card-header">✨ Features Available</div>
+        <div class="card-body">
+            <ul class="feature-list">
+                <li>Browse luxury perfume products</li>
+                <li>Search and filter products by brand</li>
+                <li>View detailed product information</li>
+                <li>Add products to shopping cart</li>
+                <li>View and manage cart items</li>
+                <li>Place orders</li>
+                <li>View order history</li>
+                <li>Edit user profile</li>
+                <li>Change password</li>
+                <li>Submit feedback and ratings</li>
+                <li>Contact form for inquiries</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="card">
+        <div class="card-header">🔧 Troubleshooting</div>
+        <div class="card-body">
+            <h5>❌ "MySQL not running" error?</h5>
+            <p>Open another Command Prompt and start MySQL:</p>
+            <div class="code-block">cd C:\xampp\mysql\bin
+mysqld</div>
+
+            <h5 style="margin-top: 20px;">❌ "Port already in use" error?</h5>
+            <p>Use a different port. Edit RUN_PHP_SERVER.bat and change <code>8888</code> to <code>8889</code> or <code>9000</code></p>
+
+            <h5 style="margin-top: 20px;">❌ "Cannot find database" error?</h5>
+            <p>The database should already exist. If it doesn't, run the setup file:</p>
+            <div class="code-block">C:\xampp\mysql\bin\mysql -u root < C:\xampp\htdocs\Royal-Signature\backend\db_schema.sql</div>
+
+            <h5 style="margin-top: 20px;">❌ Login not working?</h5>
+            <p>Make sure MySQL is running and connected. Visit <code>http://localhost:8888/setup.php</code> to check database status.</p>
+        </div>
+    </div>
+
+    <!-- Quick Test -->
+    <div class="success-box">
+        <h5>✅ Everything Working?</h5>
+        <p style="margin-bottom: 0;">Great! Try these actions:</p>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+            <li>Search for a product</li>
+            <li>Click on a perfume to see details</li>
+            <li>Add items to your cart</li>
+            <li>Place an order</li>
+            <li>Check your order history</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: 40px; color: white;">
+        <p>Royal Signature - Luxury Perfume E-Commerce Platform</p>
+        <p style="font-size: 12px;">Platform: PHP + MySQL | Server: PHP Built-in | Database: royal_signature</p>
+    </div>
+
+</div>
+
+</body>
+</html>

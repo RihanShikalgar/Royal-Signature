@@ -136,12 +136,40 @@
     </div>
   </footer>
 
+  <script src="js/utils.js"></script>
+  <script src="js/cart.js"></script>
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
 
     function placeOrder(){
-      alert("Order submitted successfully!");
+      let totalElem = document.getElementById("total");
+      let totalAmount = parseFloat(totalElem.innerText.replace("₹", ""));
+      
+      let shippingAddress = prompt("Please enter your shipping address:");
+      if (!shippingAddress) return;
+
+      let formData = new FormData();
+      formData.append('total_amount', totalAmount);
+      formData.append('shipping_address', shippingAddress);
+
+      fetch('backend/place_order.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert("Order placed successfully! Order ID: " + data.data.order_id);
+          loadCart();
+        } else {
+          alert(data.message || "Failed to place order");
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while placing the order");
+      });
     }
     
   </script>

@@ -36,10 +36,10 @@
 
         <div class="contact-content">
             <!-- Contact Form -->
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="4" required></textarea>
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
 
@@ -106,9 +106,35 @@
     </div>
   </footer>
 
+  <script src="js/utils.js"></script>
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
+
+    // Handle contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        let formData = new FormData(this);
+
+        fetch('backend/submit_contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Your message has been sent successfully!');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert(data.message || 'Failed to send message');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while sending your message');
+        });
+    });
   </script>
 </body>
 </html>
